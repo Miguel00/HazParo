@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { FrontComponent } from './front/front.component';
+import { FrontComponent } from './components/front/front.component';
 
 
 @NgModule({
