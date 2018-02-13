@@ -11,8 +11,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="./css/style.css">
-  
+  <meta name="google-signin-client_id" content="279936154369-p6q4j6ua7iuvauc9i6rb4uc9kglvkv6n.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -23,5 +22,14 @@
 			  crossorigin="anonymous"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
 </body>
 </html>
