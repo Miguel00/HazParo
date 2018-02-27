@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Users } from '../models/users.model';
+import { Login } from '../models/login.model';
+import { InfoUser } from '../models/infouser.model';
 import 'rxjs/add/operator/map';
 // import { environment } from '../enviroments/envirotment';
 
@@ -13,32 +15,32 @@ export class UserCreate {
     }
 
     getUser(): Observable<Array<Users>> {
-        const url = 'url';
+        const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users';
         return this. _http.get(url).map((response) => {
-            console.log(response);
             return response.json();
         });
     }
 
-    postUser(): Observable<Array<Users>> {
-        const url = 'url';
-        return this. _http.get(url).map((response) => {
-            console.log(response);
+    postUser(newUser): Observable<Array<Users>> {
+        const body = JSON.stringify(newUser);
+        const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users';
+        return this. _http.post(url,newUser).map((response) => {
             return response.json();
         });
     }
 
-    // postUser(){
-    //     const url = 'url';
-    //     this. _http.post(url, url).subscribe(
-    //         // (response: any) => {
-    //         //   const result = { success: false, message: 'Fail', userId: null };
-    //         //     const subject = new Subject<any>();
-    //         //     console.log(response);
-
-    //         //     subject.next(result);
-    //         // }  
-    //     );
-    // }
+    loginUser(dataLogin): Observable<any> {
+        const body = JSON.stringify(dataLogin);
+        const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users/login';
+        return this. _http.post(url,dataLogin).map((response) => {
+            return response.json();
+        });
+    }
+    infoUser(id): Observable<any> {
+        const url = `http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users/${id}`;
+        return this. _http.get(url).map((response) => {
+            return response.json();
+        });
+    }
 
 }

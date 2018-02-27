@@ -1,41 +1,39 @@
 <section>
 	<div class="container">
-		<div class="card">
-			<!--div class="card-header">
-			
-			</div-->
-			<div class="card-body">
-				<form>
-				<div class="row">
-					<div class="col-md-12 center-flex">
-						<div class="form-group col-md-6">
-							<label for="email">Email</label>
-							<input class="form-control" type="email" name="email" placeholder="Enter Email">
-						</div>
+		<div class="row justify-content-center">
+			<div class="col-lg-6" *ngIf="(loginValid==true)">
+				<br>
+				<div class="card">
+					<div class="card-body">
+						<form action="" #myForm="ngForm" novalidate>
+							<div class="row">
+								<div class="col-md-12 center-flex">
+									<div class="row justify-content-center">
+										<div class="form-group col-md-10">
+											<input class="form-control" type="email" ngModel name="username" placeholder="username">
+											<br>
+											<input class="form-control" type="password" ngModel name="password" placeholder="Password">
+											<br>
+											<p style="color:red">{{invalid}}</p>
+											<button type="submit" (click)="loginForm(myForm);" class="btn btn-primary">Submit</button>
+											<br>
+											<br>
+											<a href="/login">Crear una cuenta</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12 center-flex">
-						<div class="form-group col-md-6">
-							<label for="password">Password</label>
-							<input class="form-control" type="password" name="password" placeholder="Password">
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 center-flex">
-						<div class="form-group col-md-6">
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<br><br>
-						<a href="/login">Crear una cuenta</a>
-					</div>
-					</div>
-				</div>
-				</form>
 			</div>
-
+			<div class="col-lg-12 text-center" *ngIf="(loginValid==false)">
+				<br>
+				<h1>Bienvenido {{name}}</h1>
+				<br>
+				<a href="#"> <h2>Quiero paro!</h2> </a>
+				<a href="#"> <h2>Haré paro!</h2> </a>
+			</div>
 		</div>
 	</div>
 </section>
-
-

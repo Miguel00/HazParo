@@ -7,11 +7,11 @@ import { FrontComponent } from './components/front/front.component';
 import { environment } from './environments/environment';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { UserCreate } from './services/user.service';
 import { LoginComponent } from './components/login/login.component';
 import { APP_ROUTING } from './app.routing';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +22,10 @@ import { APP_ROUTING } from './app.routing';
     BrowserModule,
     HttpModule,
     APP_ROUTING,
+    FormsModule,
   ],
   providers: [
-    UserCreate,
+    UserCreate
   ],
   bootstrap: [AppComponent]
 })
