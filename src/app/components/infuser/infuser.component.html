@@ -1,0 +1,140 @@
+<div class="container"  align="center">
+  <h1 style="text-align: center;" align="center">Información Personal</h1>
+  <hr>
+  <div class="row" >
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="text-center">
+        <img src="img/imgPlaceHolder.png" class="avatar img-circle" alt="avatar" align="center">
+        <h6>Nueva foto</h6>
+        <input type="file" class="form-control" align="middle">
+      </div>
+    </div>
+
+
+    
+    <div class="col-md-3"></div> 
+    
+    <div class="col-2"></div>
+    <div class="col-8 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <i class="fa fa-coffee"></i>
+        Por favor introduzca los datos faltantes para completar el registro.
+      </div>
+      
+      
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="nombre">Nombre(s):</label>
+              <input disabled class="form-control" type="text"  placeholder="Jhon" id="nombre">
+            </div>
+            <div class="col-md-6">
+              <label for="apellidos">Apellidos:</label>
+              <input disabled class ="form-control" type="text" placeholder="Doe" id="apellidos">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-lg-12">
+            <label fors="correo">Correo:</label>
+            <input disabled class="form-control" type="text" placeholder="jhonDoe@ucaribe.edu.mx" id="correo">
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+          <!--<label class="col-lg-3 control-label">Fecha de nacimiento:</label>-->
+            <div class="col-md-6">
+              <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+              <input class="form-control" type="date" placeholder="" id= "fecha_nacimiento">
+            </div>
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label class="col-lg-3 control-label">Cel:</label>-->
+            <div class="col-md-6">
+              <label for="telefono">Cel:</label>
+              <input class="form-control" type="text" placeholder ="" id="telefono">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-lg-6">
+              <div class="ui-select">
+                <label for="genero">Género:</label>
+                <select class="form-control" id="genero">
+                  <option value="0" disabled selected hidden ></option>
+                  <option value="1"> Macho Opresor </option>
+                  <option value="2"> Feminazi </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="ui-select">
+                <label for="id_carrera">Carrera:</label>
+                <select class="form-control" id="id_carrera">
+                  <option value="0" disabled selected hidden ></option>
+                  <option value="1">Ambiental</option>
+                  <option value="2">Gastronomía</option>
+                  <option value="3">IDeIO</option>
+                  <option value="4">Industrial</option>
+                  <option value="5">Innovación Empresarial</option>
+                  <option value="6">Logistica </option>
+                  <option value="7">Negocios Internacionales</option>
+                  <option value="8">Telemática</option>
+                  <option value="9">Turismo</option>
+
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-lg-6">
+              <div class="ui-select">
+                <label for="tipo_horario">Horario:</label>
+                <select class="form-control" id="tipo_horario">
+                  <option value="0" disabled selected hidden ></option>
+                  <option value="1"> Matutino </option>
+                  <option value="2"> Vespertino </option>
+                  <option value="3"> Quebrado </option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="col-lg-6">
+              <div class="ui-select">
+                <label for="id_usuario">Tipo de usuario:</label>
+                <select class="form-control" id="id_usuario">
+                  <option value="0" disabled selected hidden></option>
+                  <option value="1"> Hago Paro!!! </option>
+                  <option value="2"> Dame Rai!!! </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input type="button" class="btn btn-primary" value="Finalizar">
+            <span></span>
+            <input type="reset" class="btn btn-default" value="Cancelar">
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-2"></div>
+    
+    
+  </div>
+</div>
