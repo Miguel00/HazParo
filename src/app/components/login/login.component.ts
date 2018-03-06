@@ -47,6 +47,7 @@ export class LoginComponent {
     this.userData.image  = profile.getImageUrl();
     this.userData.email = profile.getEmail();
     this.validationEmail();
+    console.log(googleUser.getBasicProfile());
   }
 
   validationEmail(){
