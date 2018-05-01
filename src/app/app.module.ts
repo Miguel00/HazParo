@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule }from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { FrontComponent } from './components/front/front.component';
@@ -7,53 +10,39 @@ import { environment } from './environments/environment';
 import { RouterModule, Routes } from '@angular/router';
 
 import { UserCreate } from './services/user.service';
-import { GeolocationService } from './services/geolocation.service';
 import { LoginComponent } from './components/login/login.component';
-import { APP_ROUTING } from './app.routing';
+import { APP_ROUTING } from './app.routing';0
 
-import { FormsModule, FormGroup, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfuserComponent } from './components/infuser/infuser.component';
-
-import { AgmCoreModule } from "@agm/core";
-
-import { ConductorComponent } from './components/conductor/conductor.component';
-import { GoogleMapsAPIWrapper } from '@agm/core';
-import { DirectionsMapDirective } from './components/conductor/directiva/google-map.directive';
-import { CommonModule } from '@angular/common';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-
-
-
-
+import { PasajerosComponent } from './pasajeros/pasajeros.component';
+import { PassengersComponent } from './components/passengers/passengers.component';
+import { HomeComponent } from './home/home.component';
+import { NgbdDatepickerBasic } from './datepicker-basic';
+import { PasajeroComponent } from './components/pasajero/pasajero.component';
 @NgModule({
   declarations: [
     AppComponent,
     FrontComponent,
     LoginComponent,
     InfuserComponent,
-    ConductorComponent,
-    DirectionsMapDirective
+    PasajerosComponent,
+    PassengersComponent,
+    HomeComponent,
+    NgbdDatepickerBasic,
+    PasajeroComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    CommonModule,
     APP_ROUTING,
+    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBF0igbZRNeFIQCfkwH_T__Wpqh6xdQjq4',
-      libraries: ["places"]
-    })
+    NgbModule.forRoot(),
   ],
   providers: [
-    UserCreate,
-    GeolocationService,
-    GoogleMapsAPIWrapper
+    UserCreate
   ],
-  bootstrap: [AppComponent],
-  schemas:  [ CUSTOM_ELEMENTS_SCHEMA ]
-
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

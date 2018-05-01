@@ -20,7 +20,6 @@ export class LoginComponent {
   };
 
   newUser = {
-    'type': 'P',
     'realm': 'string',
     'username':  '',
     'email':  '',
@@ -48,7 +47,6 @@ export class LoginComponent {
     this.userData.image  = profile.getImageUrl();
     this.userData.email = profile.getEmail();
     this.validationEmail();
-    console.log(googleUser.getBasicProfile());
   }
 
   validationEmail(){
@@ -79,7 +77,7 @@ export class LoginComponent {
     this.newUser.realm = this.userData.name ;
     console.log(this.randomPassword(this.caracteres, this.longitud));
     this.newUser.password = this.randomPassword(this.caracteres, this.longitud);
-    console.log(this.newUser);
+    
     this._users.postUser(this.newUser).subscribe(
       (response) => {
         const finalMessage = `

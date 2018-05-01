@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    Weather shit
+  </h1>
+  <hr>
+  <input type="text" [(ngModel)]=cityName>
+  <button (click)=searchCity()>Search</button>
+  <hr>
+  {{cityName}}
+</div>
+<div>
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select class="form-control" id="power"
+              required
+              [(ngModel)]="model" name="power"
+              #power="ngModel">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+      <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+        Power is required
+      </div>
+    </div>
+  
+    <!--<button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>-->
+  </form>
+</div>
+
+<hr>
+<div>{{ model }}</div><hr>
+<div> {{bullshit.city}}{{bullshit.Horario}}</div>
+
