@@ -22,7 +22,6 @@ export class UserCreate {
     }
 
     postUser(newUser): Observable<Array<Users>> {
-        console.log(newUser);
         const body = JSON.stringify(newUser);
         const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users';
         return this. _http.post(url,newUser).map((response) => {
@@ -31,12 +30,10 @@ export class UserCreate {
     }
 
     loginUser(dataLogin): Observable<any> {
-        console.log(dataLogin);
         const body = JSON.stringify(dataLogin);
         const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users/login';
         return this. _http.post(url,dataLogin).map((response) => {
             return response.json();
-            console.log(response);
         });
     }
     infoUser(id): Observable<any> {

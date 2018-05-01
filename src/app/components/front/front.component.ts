@@ -35,6 +35,7 @@ export class FrontComponent {
   }
 
   login(){
+    console.log(this.dataLogin);
     this._users.loginUser(this.dataLogin).subscribe(
       (response) => {
         this.infoUser(response.userId);
