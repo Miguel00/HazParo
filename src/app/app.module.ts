@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule }from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FrontComponent } from './components/front/front.component';
@@ -21,6 +22,7 @@ import { GoogleMapsAPIWrapper } from '@agm/core';
 import { DirectionsMapDirective } from './components/conductor/directiva/google-map.directive';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { PassengersComponent } from './components/passengers/passengers.component';
 
 
 
@@ -33,13 +35,15 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     LoginComponent,
     InfuserComponent,
     ConductorComponent,
-    DirectionsMapDirective
+    DirectionsMapDirective,
+    PassengersComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     CommonModule,
     APP_ROUTING,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({

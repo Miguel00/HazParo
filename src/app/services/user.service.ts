@@ -36,7 +36,6 @@ export class UserCreate {
         const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/users/login';
         return this. _http.post(url,dataLogin).map((response) => {
             return response.json();
-            console.log(response);
         });
     }
     infoUser(id): Observable<any> {

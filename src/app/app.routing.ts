@@ -3,6 +3,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FrontComponent } from './components/front/front.component';
 import { InfuserComponent } from './components/infuser/infuser.component';
 import { ConductorComponent } from './components/conductor/conductor.component';
+import { PassengersComponent } from './components/passengers/passengers.component';
 
 
 const APP_ROUTES: Routes = [
@@ -12,6 +13,7 @@ const APP_ROUTES: Routes = [
     { path: 'signin', component: FrontComponent },
     { path: 'infouser', component: InfuserComponent },
     { path: 'conductor', component: ConductorComponent },
+    { path: 'home', component: PassengersComponent },
  
 ];
   

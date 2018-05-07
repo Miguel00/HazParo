@@ -1,0 +1,152 @@
+<div class="container">
+	<nav class="fixed">
+  		<div class="nav nav-tabs" id="nav-tab" role="tablist">
+    		 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-hagoparo" role="tab" aria-controls="nav-home" aria-selected="true">Hago Paro</a>
+    		 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-quieroparo" role="tab" aria-controls="nav-profile" aria-selected="false">Quiero Rai</a>  
+  		</div>
+	</nav>
+	<div class="tab-content" id="nav-tabContent">
+  	<div class="tab-pane fade show active" id="nav-hagoparo" role="tabpanel" aria-labelledby="nav-home-tab">
+  	
+ 		</div>
+  	<div class="tab-pane fade" id="nav-quieroparo" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding: 10px">
+        
+      
+      <!--The content below is only a placeholder and can be replaced.-->
+
+    <div class ="row">
+      <div>
+        <form>
+        
+            <div class="form-row">
+                <div>
+                  <label for="fecha">Fecha</label>
+                  <select class="form-control" id="fecha"
+                          required
+                          [(ngModel)]="model" name="fecha"
+                          #fecha="ngModel">
+                    <option *ngFor="let fech of fechas" [value]="fech">{{fech}}</option>
+                  </select>
+                 <div [hidden]="fecha.valid || fecha.pristine" class="alert alert-danger">
+                    Fecha is required
+                  </div>
+                </div>
+                <div>
+    
+                  <label for="hora">Hora</label>
+                  <select class="form-control" id="hora"
+                          required
+                          [(ngModel)]="model2" name="hora"
+                          #hora="ngModel">
+                    <option *ngFor="let hor of horas" [value]="hor">{{hor}}</option>
+                  </select>
+                 <div [hidden]="hora.valid || hora.pristine" class="alert alert-danger">
+                    Hora is required
+                  </div>
+                </div>
+    
+                <div>
+    
+                <label for="gender">Genero</label>
+                <select class="form-control" id="gender"
+                        required
+                        [(ngModel)]="model3" name="gender"
+                        #gender="ngModel">
+                  <option *ngFor="let gen of genders" [value]="gen">{{gen}}</option>
+                </select>
+                <div [hidden]="gender.valid || gender.pristine" class="alert alert-danger">
+                  Gender is required
+                </div>
+              </div>
+     <!--         </div>
+    
+              <div class="form-group"> -->
+              <div>
+                <label for="destino">Destino</label>
+                <select class="form-control" id="destino"
+                        required
+                        [(ngModel)]="model4" name="destino"
+                        #destino="ngModel">
+                  <option *ngFor="let pow of destinos" [value]="pow">{{pow}}</option>
+                </select>
+               <div [hidden]="destino.valid || destino.pristine" class="alert alert-danger">
+                  Destino is required
+                </div>
+              </div>
+              <div align="middle">
+        
+                  <button (click)="busquedaPirata()">Buscar</button>
+                  
+                </div>
+            </div>
+              <!--<button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>-->
+            </form>
+      </div>
+
+
+
+      
+    </div>
+     <!-- <hr>
+      <div>{{ model }} <span> --- </span> {{ model2 }} <span> --- </span> {{ model3 }} <span> --- </span> {{ model4 }}</div><hr>
+     -->
+      <!--<div> {{bullshit.city}}{{bullshit.Horario}}</div>
+        <!--por si las moscas -->
+      
+<!--
+      <div>
+        <h2>My Heroes</h2>
+        <ul class="cityName">
+          <li *ngFor="let wea of cityName">
+            <span class="badge">{{wea.name}}</span>
+          </li>
+        </ul>
+      </div>
+    -->
+<!--
+    <div align="center">
+      <h2>Rutas</h2>
+      <ul class="rutaData">
+        <li *ngFor="let wea of res">
+          <span class="badge">{{wea.id}}</span><span> Coordenadas: </span> {{wea.coordA}} <span>-</span>{{wea.coordB}}<span>  |  Asientos disponibles: </span>{{wea.asientos_disponibles}}<span>  | Status: </span>{{wea.activa}}<span> | Hora:</span>{{wea.horario}}
+         
+
+        </li>
+      </ul>
+    </div>
+  -->
+  <div align="center">
+    <h2>Rutas</h2>
+    <table class="table table-striped rutaData">
+      <thead> 
+        <tr>
+          <th>ID</th>
+          <th>Coordenadas</th>
+          <th>Asientos Disponibles</th>
+          <th>Estatus</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let wea of res">
+          <td>{{wea.id}}</td>
+          <td>{{wea.coordA}} {{wea.coordB}}</td>
+          <td>{{wea.asientos_disponibles}}</td>
+          <td>{{wea.activa}}</td>
+          <td>{{wea.horario}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--
+    <div>
+        {{bullshit.Fecha}}{{bullshit.Horario}}{{bullshit.Genero}}{{bullshit.Destino}}
+    </div>
+    <div>
+      {{rutafiltro.Fecha}}{{rutafiltro.Horario}}{{rutafiltro.Genero}}{{rutafiltro.Destino}}
+  </div>
+-->
+		</div> 
+  </div>
+</div>
+
