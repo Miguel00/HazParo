@@ -167,7 +167,7 @@ private setCurrentPosition() {
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
       this.zoom = 12;
-      console.log(this.latitude,this.longitude,"position");
+      console.log(this.latitude,this.longitude,"position    ");
 
     });
   
