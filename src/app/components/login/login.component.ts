@@ -27,6 +27,10 @@ export class LoginComponent {
     'password': '',
     'emailVerified': true,
   }
+  mail = {
+    'receiver': '120300082@ucaribe.edu.mx',
+    'msg': 'abc123d'
+  }
   alert: SweetAlertService;
   email: string;
   isValid: boolean;
@@ -72,6 +76,13 @@ export class LoginComponent {
       }
     )
   }
+  sendMail(){
+    this._users.sendEmail(this.mail).subscribe(
+      (response) => {
+        console.log(response)
+      }
+    )
+  }
   createUser(){
     let name = this.userData.email.replace("@ucaribe.edu.mx","");
     this.newUser.username = name;
@@ -82,6 +93,7 @@ export class LoginComponent {
     console.log(this.newUser);
     this._users.postUser(this.newUser).subscribe(
       (response) => {
+        this.sendMail();
         const finalMessage = `
         <span style="font-weight:bold;"><span >Resiva tu correo para continuar con el registro</span></span><br><br>
         <span style="color:#007bff;">Usuario: <span style="color:black;">${this.newUser.username}</span></span><br>

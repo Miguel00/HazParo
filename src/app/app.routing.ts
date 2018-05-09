@@ -8,12 +8,12 @@ import { PassengersComponent } from './components/passengers/passengers.componen
 
 const APP_ROUTES: Routes = [
     
-    { path: '', pathMatch: 'full', redirectTo: 'conductor' },
+    { path: '', pathMatch: 'full', redirectTo: 'login' },
     { path: 'login', component: LoginComponent },
     { path: 'signin', component: FrontComponent },
     { path: 'infouser', component: InfuserComponent },
     { path: 'conductor', component: ConductorComponent },
-    { path: 'home', component: PassengersComponent },
+    { path: 'pasajero', component: PassengersComponent },
  
 ];
   
