@@ -191,8 +191,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let data of res" [class.selected]="data === selectedData"
-        (click)="onSelect(data)">
+        <tr *ngFor="let data of res;" [class.selected]="data === selectedData"
+        (click)="onSelect(data.viajes[0].id)">
           <td>{{data.id}}</td>
           <td>{{data.nombre}}</td>
           <td>{{data.apellidos}}</td>
@@ -204,11 +204,14 @@
         </tr>
       </tbody>
     </table>
+    <div>
+      <button class="btn btn-primary" (click)="agragarPirata()">Seleccionar</button>
+    </div>
   </div>
   <div *ngIf="selectedData">
 
     <h2>{{ selectedHero.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{res[1].id}}</div>
+    <div><span>id: </span>{{resId}}</div>
     
   
   </div>

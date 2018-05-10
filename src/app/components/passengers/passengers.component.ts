@@ -117,10 +117,12 @@ busquedaPirata(){
   }
   )
 
-  
-
   }
-  onSelect(data: ): void {
-    this.selectedData = data;
+  onSelect(val): void {
+    this.resId = val;
+  }
+  agregarPirata(){
+    
+
   }
 }
