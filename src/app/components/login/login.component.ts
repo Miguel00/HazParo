@@ -28,8 +28,8 @@ export class LoginComponent {
     'emailVerified': true,
   }
   mail = {
-    'receiver': '120300082@ucaribe.edu.mx',
-    'msg': 'abc123d'
+    receiver: '',
+    msg: ''
   }
   alert: SweetAlertService;
   email: string;
@@ -38,6 +38,7 @@ export class LoginComponent {
   caracteres = "0123456789abcdefABCDEF?¿¡!:;";
   longitud = 20;
   users: Array<Users>
+  emailUser;
 
   constructor(ngZone: NgZone, private _users: UserCreate) {
     this.alert = new SweetAlertService();
@@ -51,6 +52,7 @@ export class LoginComponent {
     this.userData.name = profile.getName();
     this.userData.image  = profile.getImageUrl();
     this.userData.email = profile.getEmail();
+    this.emailUser = profile.getEmail();
     this.validationEmail();
     console.log(googleUser.getBasicProfile());
   }
@@ -91,6 +93,8 @@ export class LoginComponent {
     console.log(this.randomPassword(this.caracteres, this.longitud));
     this.newUser.password = this.randomPassword(this.caracteres, this.longitud);
     console.log(this.newUser);
+    this.mail.receiver = this.userData.email;
+    this.mail.msg = this.newUser.password;
     this._users.postUser(this.newUser).subscribe(
       (response) => {
         this.sendMail();
