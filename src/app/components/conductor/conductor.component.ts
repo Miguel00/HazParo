@@ -11,6 +11,7 @@ import { Directive, Input  } from '@angular/core';
 
 import { DirectionsMapDirective } from './directiva/google-map.directive';
 import { InjectionToken } from '@angular/core';
+import { UserCreate } from '../../services/user.service';
 
 import {} from '@types/googlemaps';
 import { Ruta } from '../../models/ruta.model'
@@ -53,6 +54,11 @@ private scrollContainer: ElementRef;
 
 @ViewChild(DirectionsMapDirective) vc: DirectionsMapDirective;
 
+dataViaje = {
+  status: true,
+  usuariosdetId: '',
+}
+
 // public origin :any ; // its a example aleatory position
 // public destination : any; // its a example aleatory position
 // origin = { longitude: -86.8295894, lattitude: 21.1354986 };  
@@ -61,10 +67,24 @@ constructor(
   private mapsAPILoader: MapsAPILoader,
   private ngZone: NgZone,
   private gmapsApi: GoogleMapsAPIWrapper,
-  private _elementRef : ElementRef
+  private _elementRef : ElementRef,
+  private _users: UserCreate
 ) {
 }
+createRoute(){
 
+}
+
+viaje(){
+  this._users.viaje(this.dataViaje).subscribe(
+    (response) => {
+      this.dataViaje.usuariosdetId = localStorage.getItem("DetId");
+    },
+    err => {
+      console.log(err);
+    },
+  )
+}
 ngOnInit() {
   //set google maps defaults
   this.zoom = 10;

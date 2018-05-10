@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 //import { NgbdDatepickerBasic } from '../../datepicker-basic';
 import { forEach } from '@angular/router/src/utils/collection';
+import { Detalles } from '../../models/detalles.model';
 
 //const now = new Date();
 
@@ -30,7 +31,7 @@ export class PassengersComponent {
  model = this.fechas[0];
  model3= this.genders[0];
  model4 = this.destinos[0];
-
+ resItems: Array<Detalles>;
  rutafiltro = {
    "Fecha":"",
    "Horario": "",
@@ -119,13 +120,14 @@ busquedaPirata(){
   const url = ""
   this.http.get('http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/usuariosdets/listrutas?'+'generoc='+this.rutafiltro.Genero+'&turno='+this.rutafiltro.Horario+'&fechaViaje='+this.rutafiltro.Fecha+'&destino='+this.rutafiltro.Destino)
   .subscribe(
-  (res: Response)=> {
+  (res)=> {
   console.log(res);
   for (var i in res) {
-    this.res = res[i]
+    this.res = res[i]   
   }
-
-  
+  for (var i in this.res){
+    console.log(this.res[i].nombre)
+  } 
   }
   )
 

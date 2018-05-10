@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCreate } from '../../services/user.service';
+
 @Component({
   selector: 'app-detailuser',
   templateUrl: './detailuser.component.html',
@@ -31,6 +32,7 @@ export class DetailuserComponent implements OnInit {
     this._users.detalles(this.detailUser).subscribe(
       (response) => {
         console.log(response);
+        localStorage.setItem("DetId", response.id);
         location.href="/conductor"
       },
       err => {
