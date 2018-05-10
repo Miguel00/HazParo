@@ -4,6 +4,7 @@ import { FrontComponent } from './components/front/front.component';
 import { InfuserComponent } from './components/infuser/infuser.component';
 import { ConductorComponent } from './components/conductor/conductor.component';
 import { PassengersComponent } from './components/passengers/passengers.component';
+import { DetailuserComponent } from './components/detailuser/detailuser.component';
 
 
 const APP_ROUTES: Routes = [
@@ -14,6 +15,7 @@ const APP_ROUTES: Routes = [
     { path: 'infouser', component: InfuserComponent },
     { path: 'conductor', component: ConductorComponent },
     { path: 'pasajero', component: PassengersComponent },
+    { path: 'detalles', component: DetailuserComponent },
  
 ];
   

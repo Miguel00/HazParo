@@ -25,7 +25,6 @@ export class LoginComponent {
     'username':  '',
     'email':  '',
     'password': '',
-    'emailVerified': true,
   }
   mail = {
     receiver: '',

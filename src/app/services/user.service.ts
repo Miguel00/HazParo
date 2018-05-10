@@ -23,12 +23,6 @@ export class UserCreate {
             return response.json();
         });
     }
-    // sendEmail(mail): Observable<Array<Sendmail>> {
-    //     const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/Emails/sendEmail';
-    //     return this. _http.get(url).map((response) => {
-    //         return response.json();
-    //     });
-    // }
     sendEmail(mail): Observable<any> {
         console.log(mail);
         const body = JSON.stringify(mail);
@@ -37,7 +31,14 @@ export class UserCreate {
             return response.json();
         });
     }
-
+    detalles(detalles): Observable<any> {
+        console.log(detalles);
+        const body = JSON.stringify(detalles);
+        const url = 'http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/usuariosdets';
+        return this. _http.post(url,detalles).map((response) => {
+            return response.json();
+        });
+    }
     postUser(newUser): Observable<Array<Users>> {
         console.log(newUser);
         const body = JSON.stringify(newUser);

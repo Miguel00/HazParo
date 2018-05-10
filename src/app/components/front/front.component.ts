@@ -35,9 +35,9 @@ export class FrontComponent {
   }
 
   login(){
-    console.log(this.dataLogin);
     this._users.loginUser(this.dataLogin).subscribe(
       (response) => {
+        localStorage.setItem("id", response.userId);
         this.infoUser(response.userId);
         this.loginValid = false;
       },

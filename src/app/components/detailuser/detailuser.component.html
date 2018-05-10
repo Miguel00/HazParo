@@ -1,0 +1,48 @@
+<section>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<br>
+				<div class="card">
+					<div class="card-body">
+						<form action="" #myForm="ngForm" novalidate>
+							<div class="row">
+								<div class="col-md-12 center-flex">
+                  <br>
+                  <h2 style="text-align: center">LLena tu información para poder hacer paro</h2>
+                  <br>
+									<div class="row justify-content-center">
+										<div class="form-group col-md-10">
+											<input class="form-control" type="text" ngModel name="nombre" placeholder="Nombre">
+											<br>
+											<input class="form-control" type="text" ngModel name="apellidos" placeholder="Apellidos">
+                      <br>
+                      <select class="form-control" id="genero" name="genero" ngModel>
+                        <option value="" disabled selected >Genero</option>
+                        <option>Hombre</option>
+                        <option>Mujer</option>
+                      </select>
+                      <br>
+                      <input class="form-control" type="text" ngModel name="telefono" placeholder="Telefono">
+                      <br>
+                      <select class="form-control" id="horario" name="horario" ngModel>
+                          <option value="" disabled selected>Horario</option>
+                          <option selected>Matutino</option>
+                          <option>Vespertino</option>
+                      </select>
+											<br>
+											<p style="color:red">{{invalid}}</p>
+											<button type="submit" (click)="detalle(myForm);" class="btn btn-primary">Submit</button>
+											<br>
+											<br>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

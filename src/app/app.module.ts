@@ -23,6 +23,7 @@ import { DirectionsMapDirective } from './components/conductor/directiva/google-
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PassengersComponent } from './components/passengers/passengers.component';
+import { DetailuserComponent } from './components/detailuser/detailuser.component';
 
 
 
@@ -36,7 +37,8 @@ import { PassengersComponent } from './components/passengers/passengers.componen
     InfuserComponent,
     ConductorComponent,
     DirectionsMapDirective,
-    PassengersComponent
+    PassengersComponent,
+    DetailuserComponent
   ],
   imports: [
     BrowserModule,

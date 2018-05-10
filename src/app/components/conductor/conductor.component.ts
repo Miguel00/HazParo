@@ -55,8 +55,8 @@ private scrollContainer: ElementRef;
 
 // public origin :any ; // its a example aleatory position
 // public destination : any; // its a example aleatory position
-origin = { longitude: -86.8295894, lattitude: 21.1354986 };  // its a example aleatory position
-destination = { longitude: -86.8261042, lattitude: 21.2013764 };
+// origin = { longitude: -86.8295894, lattitude: 21.1354986 };  
+// destination = { longitude: -86.8261042, lattitude: 21.2013764 };
 constructor(
   private mapsAPILoader: MapsAPILoader,
   private ngZone: NgZone,
@@ -67,16 +67,16 @@ constructor(
 
 ngOnInit() {
   //set google maps defaults
-  this.zoom = 4;
-  this.latitude = 39.8282;
-  this.longitude = -98.5795;
+  this.zoom = 10;
+  this.latitude = 21.1212853;
+  this.longitude = -86.9893194;
   //this.iconurl = '../image/map-icon.png';
-  this.iconurl = '../image/map-icon.png';
+  this.iconurl = 'https://image.flaticon.com/icons/png/128/484/484167.png';
 
  // this.mapCustomStyles = this.getMapCusotmStyles();
   //create search FormControl
-  // this.destinationInput = new FormControl();
-  // this.destinationOutput = new FormControl();
+  this.destinationInput = new FormControl();
+  this.destinationOutput = new FormControl();
   //set current position
   this.setCurrentPosition();
   
@@ -112,7 +112,7 @@ private setupPlaceChangedListener(autocomplete: any, mode: any ) {
           } else {
               this.vc.destination = {lng: -86.8261042, lat: 21.20137644}; // its a example aleatory position
               this.vc.destinationPlaceId = place.place_id;
-              console.log(this.destination);
+              console.log(this.vc.destination);
           }
 
           if(this.vc.directionsDisplay === undefined){ this.mapsAPILoader.load().then(() => { 
@@ -124,7 +124,7 @@ private setupPlaceChangedListener(autocomplete: any, mode: any ) {
           //Update the directions
           console.log(this.vc, "traza")
           this.vc.updateDirections();
-          this.zoom = 12;
+          this.zoom = 6;
         });
 
      });
@@ -137,7 +137,7 @@ private route() {
       this.vc.directionsDisplay = new google.maps.DirectionsRenderer;
   
       this.vc.updateDirections();
-      this.zoom = 12;
+      this.zoom = 6;
 }
 
 
@@ -157,7 +157,7 @@ private setPickUpLocation( place:any ) {
         this.latitude = place.geometry.location.lat();
         this.longitude = place.geometry.location.lng();
         console.log("ok")
-        this.zoom = 12;
+        this.zoom = 6;
 }
 
 private setCurrentPosition() {
@@ -166,7 +166,7 @@ private setCurrentPosition() {
     navigator.geolocation.getCurrentPosition((position) => {
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
-      this.zoom = 12;
+      this.zoom = 14;
       console.log(this.latitude,this.longitude,"position    ");
 
     });
