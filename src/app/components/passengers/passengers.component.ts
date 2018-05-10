@@ -122,16 +122,9 @@ busquedaPirata(){
   //this.http.get('http://localhost:3000/api/viajes/list_viajes?fechaViaje='+this.rutafiltro.Fecha+'&turno='+this.rutafiltro.Horario+'&destino='+this.rutafiltro.Destino+'&genero='+this.rutafiltro.Genero)
   //this.http.get('api.openweathermap.org/data/2.5/forecast?APPID=20ddea961cabe84819fc9c2c6d040e12&id=524901'+this.cityName+this.model)
   .subscribe(//res => res
-  (res: Response)=> {
-  //const weatherCity = res.json;
-  this.res=res.rutas[0].nombre;
-  console.log(this.res);
-  //this.cityName = res;
-  //this.Citybullshit = weatherCity;
+  res=>this.res=res
   
-  }
   )
-
 
   }
 }

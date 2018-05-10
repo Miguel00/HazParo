@@ -149,16 +149,11 @@
         <tbody>
           <tr >
             <td >
-             <!-- <ng-continer *ngFor="let wea of res">
-               <ng-container *ngFor="let object of wea">
-                  <ng-container *ngFor="let array of object">
-                    <ng-continer *ngFor="let item">
-                        <span>{{item}}</span>
-                    </ng-continer>
-                  </ng-container>
-               </ng-container>
-             </ng-continer>  -->
-
+              <ng-container *ngFor="let wea of res">
+                <ng-container *ngFor="let rutas of wea">
+                  <span>{{rutas.nombre}}</span>
+                </ng-container>
+              </ng-container>
             </td>
           </tr>
         </tbody>
