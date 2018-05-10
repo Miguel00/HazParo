@@ -146,7 +146,7 @@
   </div>
   <div>
        <!-- {{res[0].rutas[0].genero}}{{res[0].rutas[0].viajes[0].id}}-->
-        <tbody>
+        <!-- <tbody>
           <tr >
             <td >
               <ng-container *ngFor="let wea of res">
@@ -156,7 +156,16 @@
               </ng-container>
             </td>
           </tr>
-        </tbody>
+        </tbody> -->
+        <ul *ngFor="let data of res">
+          <li>{{data.nombre}}</li>
+          <li>{{data.genero}}</li>
+          <li>{{data.fecha_nacimiento}}</li>
+          <li>{{data.telefono}}</li>
+          <li>{{data.tipo_horario}}</li>
+          <li>{{data.id}}</li>
+          <li>{{data.userId}}</li>
+      </ul>
   </div>
   
 

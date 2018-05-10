@@ -25,7 +25,7 @@ export class PassengersComponent {
  horas = ['equis','Matutino','Vespertino','Quebrado'];
  genders = ['equis','Macho opresor', 'Feminazi'];
  destinos = ['equis','Pa la Uni', 'Pa mi Canton'];
- res;
+ res = [];
  model2 = this.horas[0];
  model = this.fechas[0];
  model3= this.genders[0];
@@ -116,15 +116,19 @@ busquedaPirata(){
   }else{
     this.rutafiltro.Fecha="X";
   }
-
+  const url = ""
   this.http.get('http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/usuariosdets/listrutas?'+'generoc='+this.rutafiltro.Genero+'&turno='+this.rutafiltro.Horario+'&fechaViaje='+this.rutafiltro.Fecha+'&destino='+this.rutafiltro.Destino)
-  //this.http.get('http://localhost:3004/rutas')
-  //this.http.get('http://localhost:3000/api/viajes/list_viajes?fechaViaje='+this.rutafiltro.Fecha+'&turno='+this.rutafiltro.Horario+'&destino='+this.rutafiltro.Destino+'&genero='+this.rutafiltro.Genero)
-  //this.http.get('api.openweathermap.org/data/2.5/forecast?APPID=20ddea961cabe84819fc9c2c6d040e12&id=524901'+this.cityName+this.model)
-  .subscribe(//res => res
-  res=>this.res=res
+  .subscribe(
+  (res: Response)=> {
+  console.log(res);
+  for (var i in res) {
+    this.res = res[i]
+  }
+
   
+  }
   )
+
 
   }
 }
