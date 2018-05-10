@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 //import { NgbdDatepickerBasic } from '../../datepicker-basic';
 import { forEach } from '@angular/router/src/utils/collection';
-import { Detalles } from '../../models/detalles.model';
 
 //const now = new Date();
 
@@ -21,17 +20,19 @@ export class PassengersComponent {
   }
 
  //cityName={};
- //Citybullshit='';
- fechas = ['equis','Lunes','Martes','Miercoles','Juevez','Viernes'];
+ selectedData;
+ fechas = ['Lunes','Martes','Miercoles','Juevez','Viernes'];
  horas = ['equis','Matutino','Vespertino','Quebrado'];
  genders = ['equis','Macho opresor', 'Feminazi'];
  destinos = ['equis','Pa la Uni', 'Pa mi Canton'];
  res = [];
+ resId = 0;
+ ids = [];
  model2 = this.horas[0];
  model = this.fechas[0];
  model3= this.genders[0];
  model4 = this.destinos[0];
- resItems: Array<Detalles>;
+
  rutafiltro = {
    "Fecha":"",
    "Horario": "",
@@ -47,24 +48,8 @@ export class PassengersComponent {
    "Destino":""
  }
  
- 
-/*
- searchCity(){
-   
-   this.http.get('http://localhost:3004/pets')
-   //this.http.get('api.openweathermap.org/data/2.5/forecast?APPID=20ddea961cabe84819fc9c2c6d040e12&id=524901'+this.cityName+this.model)
-   .subscribe(//res => res
-   (res: Response)=> {
-   const weatherCity = res.json;
-   console.log(res);
-   //this.Citybullshit = weatherCity;
-   }
-   )
-   this.bullshit.city = this.cityName;
-   this.bullshit.Horario = this.model;
-   
- }
- */
+
+
 busquedaPirata(){
   /*
   this.http.get('http://localhost:3004/rutas')
@@ -120,17 +105,22 @@ busquedaPirata(){
   const url = ""
   this.http.get('http://ec2-13-58-37-36.us-east-2.compute.amazonaws.com:3000/api/usuariosdets/listrutas?'+'generoc='+this.rutafiltro.Genero+'&turno='+this.rutafiltro.Horario+'&fechaViaje='+this.rutafiltro.Fecha+'&destino='+this.rutafiltro.Destino)
   .subscribe(
-  (res)=> {
-  console.log(res);
-  for (var i in res) {
-    this.res = res[i]   
-  }
-  for (var i in this.res){
-    console.log(this.res[i].nombre)
-  } 
+  (res: Response)=> {
+    console.log(res);
+    for (var i in res) {
+      this.res = res[i]
+      
+    }
+    for (var i in this.res){
+      this.resId= this.res[i].id;
+    }
   }
   )
 
+  
 
+  }
+  onSelect(data: ): void {
+    this.selectedData = data;
   }
 }

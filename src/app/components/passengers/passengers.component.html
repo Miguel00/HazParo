@@ -157,6 +157,7 @@
             </td>
           </tr>
         </tbody> -->
+        <!--
         <ul *ngFor="let data of res">
           <li>{{data.nombre}}</li>
           <li>{{data.genero}}</li>
@@ -165,9 +166,52 @@
           <li>{{data.tipo_horario}}</li>
           <li>{{data.id}}</li>
           <li>{{data.userId}}</li>
+          <li>{{data.viajes[0].id}}</li>
+          <li>{{data.viajes[0].ruta[0].activa}}</li>
+          <li>{{data.viajes[0].ruta[0].asientos_disponibles}}</li>
+          <li>{{data.viajes[0].ruta[0].disponibilidads.rutaId}}</li>
+          <li>{{data.viajes[0].ruta[0].disponibilidads.trayectoriaViaje[0].coordA.lat}} <span>--</span>{{data.viajes[0].ruta[0].disponibilidads.trayectoriaViaje[0].coordA.lng}}</li>
       </ul>
+    -->
   </div>
+  <div>{{resId}}</div>
+  <div align="center">
+    <h2>Rutas</h2>
+    <table class="table table-striped rutaData">
+      <thead> 
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Genero</th>
+          <th>Destino</th>
+          <th>Asientos Disponibles</th>
+          <th>Estatus</th>
+          <th>Horario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of res" [class.selected]="data === selectedData"
+        (click)="onSelect(data)">
+          <td>{{data.id}}</td>
+          <td>{{data.nombre}}</td>
+          <td>{{data.apellidos}}</td>
+          <td>{{data.genero}}</td>
+          <td><span>lat: </span>{{data.viajes[0].ruta[0].disponibilidads.trayectoriaViaje[0].coordB.lat}} <span>lng: </span>{{data.viajes[0].ruta[0].disponibilidads.trayectoriaViaje[0].coordB.lng}}</td>
+          <td>{{data.viajes[0].ruta[0].asientos_disponibles}}</td>
+          <td>{{data.viajes[0].ruta[0].activa}}</td>
+          <td>{{data.viajes[0].ruta[0].horario}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="selectedData">
+
+    <h2>{{ selectedHero.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{res[1].id}}</div>
+    
   
+  </div>
 
 		</div> 
   </div>
